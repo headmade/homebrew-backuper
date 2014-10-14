@@ -9,7 +9,6 @@ class Backuper < Formula
 
   depends_on "go"
   depends_on "openssl"
-  depends_on :x11
 
   def install
     system "make", "install"
