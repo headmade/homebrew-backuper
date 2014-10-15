@@ -15,6 +15,7 @@ class Backuper < Formula
     print system "mkdir -p _#{distdir} && mv [a-z]* _#{distdir} && mv _src src"
     print system 'ls -lR'
     print system "cd #{distdir} && ls -l && GOPATH=#{Dir.pwd} make brew"
+    exit
     bin.install "#{distdir}/gobackuper"
   end
 
