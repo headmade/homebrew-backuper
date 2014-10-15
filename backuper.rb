@@ -18,6 +18,11 @@ class Backuper < Formula
     print `ls -l #{distdir}`
     print "--\n"
     print `ls -l src/github.com/nightlyone/lockfile`
+    print "--\n"
+    print `ls -l src/github.com/`
+    system "cd #{distdir} && GOPATH=#{Dir.pwd} make deps"
+    print "--\n"
+    print `ls -l src/github.com/`
     system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
     bin.install "#{distdir}/gobackuper"
   end
