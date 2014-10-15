@@ -14,7 +14,7 @@ class Backuper < Formula
     distdir = 'src/github.com/headmade/backuper'
     system "mkdir -p _#{distdir} && mv [a-z]* _#{distdir} && mv _src src"
     print `ls -l #{Dir.pwd}/#{distdir}`
-    print `cd #{distdir} && grep brew Makefile`
+    print `cd #{distdir} && pwd`
     system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
     exit
     bin.install "#{distdir}/gobackuper"
