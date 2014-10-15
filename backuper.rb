@@ -11,11 +11,11 @@ class Backuper < Formula
   depends_on "openssl"
 
   def install
-    system "make", "install"
+    system "make", "brew"
     bin.install "gobackuper"
   end
 
   test do
-    assert_equal "      23\n", `backuper -help | wc -l`
+    assert_equal "      23\n", `gobackuper -help | wc -l`
   end
 end
