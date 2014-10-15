@@ -13,7 +13,7 @@ class Backuper < Formula
   def install
     distdir = 'src/github.com/headmade/backuper'
     system "mkdir -p _#{distdir} && mv [A-Za-z]* _#{distdir} && mv _src src"
-    system "cd #{distdir} && GOPATH=#{Dir.pwd} make --jobs=1 brew"
+    system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
     bin.install "#{distdir}/gobackuper"
   end
 
