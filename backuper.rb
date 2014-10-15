@@ -23,7 +23,7 @@ class Backuper < Formula
     #system "cd #{distdir} && GOPATH=#{Dir.pwd} make deps"
     print "--\n"
     print `ls -l src/github.com/`
-    system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
+    system "cd #{distdir} && GOPATH=#{Dir.pwd} make deps build"
     print "--\n"
     print `ls -l src/github.com/`
     bin.install "#{distdir}/gobackuper"
