@@ -16,7 +16,8 @@ class Backuper < Formula
     print `ls -l #{Dir.pwd}`
     print "--\n"
     print `ls -l #{distdir}`
-    system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
+    #system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
+    system "cd #{distdir} && make brew"
     bin.install "#{distdir}/gobackuper"
   end
 
