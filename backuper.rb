@@ -12,10 +12,10 @@ class Backuper < Formula
 
   def install
     distdir = 'src/github.com/headmade/backuper'
-    print `ls -lR #{Dir.pwd}`
-    print `mkdir -p _#{distdir} && mv [a-z]* _#{distdir} && mv _src src`
-    print `ls -lR #{Dir.pwd}`
-    print `cd #{distdir} && ls -l && GOPATH=#{Dir.pwd} make brew`
+    system "mkdir -p _#{distdir} && mv [a-z]* _#{distdir} && mv _src src"
+    print `ls -l #{Dir.pwd}/#{distdir}`
+    print `cd #{distdir} && grep brew Makefile`
+    system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
     exit
     bin.install "#{distdir}/gobackuper"
   end
