@@ -24,6 +24,8 @@ class Backuper < Formula
     print "--\n"
     print `ls -l src/github.com/`
     system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
+    print "--\n"
+    print `ls -l src/github.com/`
     bin.install "#{distdir}/gobackuper"
   end
 
