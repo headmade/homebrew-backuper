@@ -12,7 +12,7 @@ class Backuper < Formula
 
   def install
     system "mkdir -p /tmp/go"
-    system "GOPATH=/tmp/go make brew"
+    system "GOPATH=#{Dir.pwd}/../../../../ make brew"
     bin.install "gobackuper"
   end
 
