@@ -18,7 +18,8 @@ class Backuper < Formula
     bin.install "#{distdir}/gobackuper"
 
     system "GOPATH=#{gopath} go get github.com/rlmcpherson/s3gof3r/gof3r"
-    bin.install "#{gopath}/bin/gof3r"
+    system "mv #{gopath}/bin/gof3r #{gopath}/bin/gobackuper_gof3r"
+    bin.install "#{gopath}/bin/gobackuper_gof3r"
   end
 
   test do
