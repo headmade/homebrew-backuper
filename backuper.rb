@@ -11,9 +11,10 @@ class Backuper < Formula
   depends_on "openssl"
 
   def install
-    system "mkdir -p /tmp/go"
-    system "GOPATH=#{Dir.pwd}/../../../../ make brew"
-    bin.install "gobackuper"
+    distdir = 'src/github.com/headmade/backuper'
+    system "mkdir -p _#{distdir} && mv [a-z]* _#{distdir} && mv _src src"
+    system "cd #{distdir} && GOPATH=#{Dir.pwd} make brew"
+    bin.install "#{distdir}/gobackuper"
   end
 
   test do
