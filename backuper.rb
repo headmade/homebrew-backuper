@@ -11,7 +11,8 @@ class Backuper < Formula
   depends_on "openssl"
 
   def install
-    system "make", "brew"
+    system "mkdir -p /tmp/go"
+    system "GOPATH=/tmp/go make brew"
     bin.install "gobackuper"
   end
 
