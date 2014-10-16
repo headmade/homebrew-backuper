@@ -7,7 +7,7 @@ class Backuper < Formula
   version "0.0.1"
   sha1 ""
 
-  depends_on "go"
+  depends_on "go" => :build
   depends_on "openssl"
 
   def install
